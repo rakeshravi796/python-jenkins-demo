@@ -11,7 +11,7 @@ pipeline {
 
         stage('Setup') {
             steps {
-                sh 'python -m pip install --upgrade pip'
+                sh 'python3 -m pip install --upgrade pip'
                 sh 'pip install -r requirements.txt'
             }
         }
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'python -m pytest --cov=app tests/'
+                sh 'python3 -m pytest --cov=app tests/'
             }
             post {
                 always {
@@ -37,7 +37,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'pip install wheel'
-                sh 'python setup.py bdist_wheel'
+                sh 'python3 setup.py bdist_wheel'
             }
             post {
                 success {
