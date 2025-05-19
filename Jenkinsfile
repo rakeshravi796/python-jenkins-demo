@@ -20,7 +20,7 @@ pipeline {
 
         stage('Lint') {
             steps {
-                sh 'flake8 app/ tests/'
+                sh 'venv/bin/flake8 app/ tests/'
             }
         }
 
