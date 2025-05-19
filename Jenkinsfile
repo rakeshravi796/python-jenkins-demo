@@ -31,7 +31,7 @@ pipeline {
             post {
                 always {
                     sh 'venv/bin/python3 -m pytest --cov=app --cov-report=xml tests/'
-                    junit 'pytest-results.xml'// Requires pytest-junit plugin
+                    junit 'venv/bin/pytest-results.xml'// Requires pytest-junit plugin
                 }
             }
         }
