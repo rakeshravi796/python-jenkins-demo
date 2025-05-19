@@ -13,7 +13,9 @@ pipeline {
             steps {
                 // sh 'apt-get update && apt-get install -y python3 python3-pip python3-venv'
                 sh 'python3 -m venv venv'
-                sh 'source venv/bin/activate'
+                // sh 'source venv/bin/activate'
+                sh '. venv/bin/activate'
+
                 // sh 'pip install --upgrade pip'
                 sh 'pip install -r requirements.txt'
             }
