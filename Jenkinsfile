@@ -12,7 +12,9 @@ pipeline {
         stage('Setup') {
             steps {
                 // sh 'python3 -m pip install --upgrade pip'
-                sh 'pipx install requirements.txt'
+                sh 'pipx install pytest==7.4.0'
+                sh 'pipx install pytest-cov==4.1.0'
+                sh 'pipx install flake8==6.1.0'
                 // sh 'python3 -m venv venv'
                 // sh 'source venv/bin/activate'
                 // sh 'pip install --upgrade pip'
