@@ -26,11 +26,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'venv/bin/python3 -m pytest --cov=app tests/'
+                sh 'venv/bin/python3 -m venv/bin/pytest --cov=app tests/'
             }
             post {
                 always {
-                    sh 'venv/bin/python3 -m pytest --cov=app --cov-report=xml tests/'
+                    sh 'venv/bin/python3 -m venv/bin/pytest --cov=app --cov-report=xml tests/'
                     junit 'venv/bin/pytest-results.xml'// Requires pytest-junit plugin
                 }
             }
