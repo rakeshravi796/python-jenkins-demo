@@ -11,7 +11,7 @@ class TestMain(unittest.TestCase):
         self.assertEqual(greet("Jenkins"), "Hello, Jenkins!")
 
     def test_add(self):
-        self.assertEqual(add(2, 3), 6)
+        self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 1), 0)
 
 
